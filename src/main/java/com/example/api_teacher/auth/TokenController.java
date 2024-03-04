@@ -18,10 +18,10 @@ import com.example.api_teacher.entity.User;
 @RequestMapping("/token")
 public class TokenController {
     
-    @PostMapping("/")
+    @PostMapping("/get")
     public ResponseEntity<String> getToken(@RequestBody User user) {
 
-        String url = "http://localhost:8080/realms/gradeHoraria/protocol/openid-connect/token";
+        String url = "http://keycloak:8080/realms/gradeHoraria/protocol/openid-connect/token";
 
         HttpHeaders headers = new HttpHeaders();
         RestTemplate restTemplate = new RestTemplate();
