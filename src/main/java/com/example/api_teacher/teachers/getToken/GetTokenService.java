@@ -1,25 +1,20 @@
-package com.example.api_teacher.auth;
+package com.example.api_teacher.teachers.getToken;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.api_teacher.entity.User;
 
-@RestController
-@RequestMapping("/token")
-public class TokenController {
+@Service
+public class GetTokenService {
     
-    @PostMapping("/get")
-    public ResponseEntity<String> getToken(@RequestBody User user) {
+    public ResponseEntity<String> execute(User user) {
 
         String url = "http://keycloak:8080/realms/gradeHoraria/protocol/openid-connect/token";
 

@@ -1,4 +1,4 @@
-package com.example.api_teacher.config;
+package com.example.api_teacher.config.security;
 
 import java.util.Map;
 import org.springframework.core.convert.converter.Converter;
@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 
 import java.util.Collection;
 
-public class JWTConverter implements Converter<Jwt, AbstractAuthenticationToken>{
+public class JWTConverterService implements Converter<Jwt, AbstractAuthenticationToken>{
 
     @Override
     public AbstractAuthenticationToken convert(Jwt jwt) {

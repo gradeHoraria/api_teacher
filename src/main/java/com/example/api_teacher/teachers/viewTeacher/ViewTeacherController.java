@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.api_teacher.dto.TeacherDTO;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -17,6 +18,7 @@ public class ViewTeacherController {
     private final ViewTeacherService viewTeacherService;
 
     @GetMapping("/{id}")
+    @Operation(summary = "Visualizar um professor")
     public TeacherDTO handle(@PathVariable Long id) {
         return viewTeacherService.execute(id);
     }

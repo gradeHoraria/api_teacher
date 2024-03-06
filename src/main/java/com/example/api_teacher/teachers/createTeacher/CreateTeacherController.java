@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.api_teacher.dto.TeacherDTO;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -20,6 +21,7 @@ public class CreateTeacherController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
+    @Operation(summary = "Criar um novo professor")
     public void handle(@RequestBody TeacherDTO teacherDTO) {
         createTeacherService.execute(teacherDTO);
     }

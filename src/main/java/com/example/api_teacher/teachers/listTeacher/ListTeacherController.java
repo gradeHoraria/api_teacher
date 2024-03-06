@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.api_teacher.dto.TeacherDTO;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -18,6 +19,7 @@ public class ListTeacherController {
     private final ListTeacherService listTeacherService;
 
     @GetMapping
+    @Operation(summary = "Listar todos os professores")
     public List<TeacherDTO> handle() {
         return listTeacherService.execute();
     }
